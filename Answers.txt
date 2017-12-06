@@ -1,0 +1,45 @@
+Ans 1 - Hapijs provide api for different plugins and each plugin is independent of others. This separation consequently makes testing really easy. In our test case we can test any plugin just using hapi server and thus we can test any plugin in isolation without using any other resource.In this case we dont have to bother about other modules because we can remove to test specific one.
+This is the configuration-centric approach which means to build a servers that can split all of our configuration (like routes) into require-able modules that can be tested in isolation.
+
+
+Ans 2 - Streams are collection of data like strings or arrays.Streams are used to read data from source and write data to destination in continuos way.
+
+Streams can be of following types : 
+
+1 - Readable − Stream used for read operation.
+2 - Writable − Stream used for write operation.
+3 - Duplex − Stream used for both read and write operation.
+4 -Transform − duplex stream in which output is based on input.
+
+Readable Streams :
+1 - HTTP response(on client side)
+2 - HTTP request(on server side)
+3 - fs read stream
+4 - zlib stream
+5 - crypto stream
+6 - TCP socket
+7 - child process stdout and stderr
+8 - process.stdin
+
+Writable Streams : 
+1 - HTTP response(on server side)
+2 - HTTP request(on client side)
+3 - fs write stream
+4 - zlib stream
+5 - crypto stream
+6 - TCP socket
+7 - child process stdin
+8 - process stdout, process.stderr
+
+Duplex streams : 
+1 - TCP stream
+2 - zlib stream
+3 - crypto stream
+
+Transform streams : 
+1 - zlib streams
+2 - crypto streams
+
+
+
+Ans 3 - Many objects in Node emits events at different instance of time and each of these objects are instances of events.EventEmitter. Some of the common events which we had used in Streams are data, end, error etc.If we have to do some task when the data is read from stream then we use data event and in same way if we want to use the event on end of data reading we will use end event on stream.If any error is occured then error event is triggered. When the EventEmitter object emits an event, all of the functions attached to that specific event are called synchronously. Any values returned by the called listeners are ignored and will be discarded.

@@ -1,0 +1,13 @@
+{
+  "name": "Todo list.",
+  "version": "0.0.0",
+  "description": "Todo list manipulation for users.",
+  "main": "index.js",
+  "repository": "",
+  "author": "Harry  <mo.coolherry4u@gmail.com>",
+  "dependencies": {
+    "async": "~0.2.8",
+    "hapi" : "*",
+    "joi" : "*"
+  }
+}
